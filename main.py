@@ -1,8 +1,8 @@
 from banner import banner
 from pystyle import *
 import os
-
-
+import subprocess
+exe_path = r"Confut proxy.exe"
 COLOR_CODE = {
     "RESET": "\033[0m",  
     "UNDERLINE": "\033[04m", 
@@ -18,7 +18,7 @@ COLOR_CODE = {
     "DARK": "\033[90m",     
 }
 
-print(Colorate.Horizontal(Colors.black_to_white, Center.XCenter(banner)))
+print(Colorate.Color(Colors.white, Center.XCenter(banner)))
 select = input(f'{COLOR_CODE["DARK"]}[+]{COLOR_CODE["BOLD"]} Выбрать >{COLOR_CODE["GREEN"]} ')
 if select == '1':
     from vpnc import check_vpn 
@@ -30,7 +30,6 @@ elif select == '3':
     from ip import get_user_ip
     get_user_ip()
 elif select == '4':
-    from proxy import proxyServer
-    proxyServer()
+    subprocess.run(exe_path, check=True)
 elif select == '5':
-    exit    
+    exit   
