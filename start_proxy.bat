@@ -1,4 +1,5 @@
 ::the file is no longer needed
+::Код больше не нужен 
 @echo off
 
 
